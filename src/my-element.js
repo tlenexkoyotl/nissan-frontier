@@ -20,6 +20,11 @@ export class MyElement extends LitElement {
        * The number of times the button has been clicked.
        */
       count: { type: Number },
+
+      /**
+       * URL de la imagen 1
+       */
+      image1Url: { type: String }
     }
   }
 
@@ -27,25 +32,12 @@ export class MyElement extends LitElement {
     super()
     this.docsHint = 'Click on the Vite and Lit logos to learn more'
     this.count = 0
+    this.image1Url = 'https://www.nissan.com.mx/content/dam/Nissan/mexico/assets/frontier/my24/vlp/pro4x/nissan-2024-frontier_pro_4x_4x4_ta-gris_volcanico-negro-negro-exterior-pro4x-montana-d.jpg.ximg.l_12_m.smart.jpg'
   }
 
   render() {
     return html`
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src=${viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://lit.dev" target="_blank">
-          <img src=${litLogo} class="logo lit" alt="Lit logo" />
-        </a>
-      </div>
-      <slot></slot>
-      <div class="card">
-        <button @click=${this._onClick} part="button">
-          count is ${this.count}
-        </button>
-      </div>
-      <p class="read-the-docs">${this.docsHint}</p>
+    <img src="${this.image1Url}">
     `
   }
 
